@@ -1,0 +1,14 @@
+.slidev-layout {
+    --uno: px-14 py-10 text-[1.4rem];
+
+    h1, h2, h3, h4 {
+        --uno: mb-10;
+    }
+
+    --slidev-code-font-size: 1.2rem;
+
+    /* seems to be necessary for regular paragraphs */
+    h1 + p {
+        opacity: 1;
+    }
+}
