@@ -256,7 +256,6 @@ import kotlin.random.Random
 
 repeat(1000) {
     val a = Random.nextInt(Int.MIN_VALUE / 2, Int.MAX_VALUE / 2)
-    val b = Random.nextInt(Int.MIN_VALUE / 2, Int.MAX_VALUE / 2)
   
     add(add(a, 1), 1) shouldBe add(a, 2)
 }
@@ -288,7 +287,6 @@ import kotlin.random.Random
 
 repeat(1000) {
     val a = Random.nextInt(Int.MIN_VALUE / 2, Int.MAX_VALUE / 2)
-    val b = Random.nextInt(Int.MIN_VALUE / 2, Int.MAX_VALUE / 2)
   
     add(a, 0) shouldBe a
 }
@@ -538,10 +536,13 @@ Filter test data with assertions
 
 ```kotlin
 checkAll(givenVehicleGenerator()) {
-    val lastAction = it.actions.lastOrNull()
-    assume { lastAction.shouldNotBeNull() }
+    val firstAction = it.actions.firstOrNull()
+    assume {
+        firstAction.shouldNotBeNull()
+        firstAction.isOnSameVehicleAsRelatedAction.shouldBeTrue()
+    }
 
-    lastAction!!.isScheduledBeforeRelatedAction.shouldBeFalse()
+    firstAction!!.isScheduledBeforeRelatedAction.shouldBeTrue()
 }
 ```
 
