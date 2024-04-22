@@ -589,7 +589,7 @@ Mix property tests with your regular example based tests!
 - Scott Wlaschin on property testing: https://fsharpforfunandprofit.com/series/property-based-testing/
 - Kotest's property testing framework: <br> https://kotest.io/docs/proptest/property-based-testing.html
 - Slides created with slidev: https://sli.dev
-- This presentation: 
+- This presentation: https://github.com/greyhairredbear/presentations <br> (`/intro-property-based-testing`)
 
 </v-clicks>
 
